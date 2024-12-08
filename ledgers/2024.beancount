@@ -1,0 +1,59 @@
+* Options
+option "title" "2022"
+option "operating_currency" "EUR"
+
+* Accounts
+2024-01-01 open Equity:Opening-Balances EUR
+
+2024-01-01 open Assets:Bank:Checking EUR
+2024-01-01 open Assets:Bank:Savings EUR
+2024-01-01 open Assets:Cash EUR
+
+2024-01-01 open Expenses:Groceries EUR
+2024-01-01 open Expenses:Restaurant EUR
+2024-01-01 open Expenses:Utilities EUR
+
+2024-01-01 open Income:Salary EUR
+
+* Opening Balances
+2024-01-01 * "Opening Balances"
+    Assets:Bank:Checking                     400 EUR
+    Assets:Cash                               12 EUR
+    Equity:Opening-Balances
+
+* Transactions
+2024-01-02 * "Salary"
+   ; Purpose: SALARY - REF 000000888888
+   ; Category: Fixed Income - Salary
+    Assets:Bank:Checking                    2200 EUR
+    Assets:Bank:Savings                      200 EUR
+    Income:Salary                          -2400 EUR
+
+2024-01-03 * "ATM"
+   ; Purpose: ATM - REF 000000111111
+   ; Category: Fixed Expenses - ATM
+    Assets:Bank:Checking                     -20 EUR
+    Assets:Cash                               20 EUR
+
+2024-01-03 * "Grocery Store GmbH"
+   ; Purpose: GROCERY STORE GMBH - REF 000000555555
+   ; Category: Variable Expenses - Groceries
+    Assets:Bank:Checking                  -15.50 EUR
+    Expenses:Groceries                     15.50 EUR
+
+2024-01-03 * "Restaurant"
+   ; Purpose: RESTAURANT - REF 000000666666
+   ; Category: Variable Expenses - Restaurant
+    Assets:Cash                              -20 EUR
+    Expenses:Restaurant                       20 EUR
+
+2024-01-04 * "Utility Company"
+   ; Purpose: UTILITY COMPANY - REF 000000777777
+   ; Category: Variable Expenses - Utilities
+    Assets:Bank:Checking                     -30 EUR
+    Expenses:Utilities                        30 EUR
+
+* Closing Balances
+2024-12-31 balance Assets:Bank:Checking  2534.50 EUR
+2024-12-31 balance Assets:Cash                12 EUR
+2024-12-31 balance Assets:Bank:Savings       200 EUR

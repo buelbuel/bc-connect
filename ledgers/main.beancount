@@ -1,0 +1,8 @@
+plugin "autobean.sorted"
+option "operating_currency" "EUR"
+
+2010-01-01 custom "fava-extension" "fava_dashboards" "{
+    'config': '../conf/dashboards.yaml'
+}"
+
+include "2024.beancount"
